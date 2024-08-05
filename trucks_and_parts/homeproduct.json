@@ -1,0 +1,30 @@
+[
+{
+  "model": "core.homeproduct",
+  "pk": 1,
+  "fields": {
+    "image": "project_images/home_products/slide-series6.png"
+  }
+},
+{
+  "model": "core.homeproduct",
+  "pk": 2,
+  "fields": {
+    "image": "project_images/home_products/slide-15.png"
+  }
+},
+{
+  "model": "core.homeproduct",
+  "pk": 3,
+  "fields": {
+    "image": "project_images/home_products/slide-series2.png"
+  }
+},
+{
+  "model": "core.homeproduct",
+  "pk": 4,
+  "fields": {
+    "image": "project_images/home_products/slide-series9.png"
+  }
+}
+]

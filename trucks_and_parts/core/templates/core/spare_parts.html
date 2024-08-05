@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+<div class="slider-container">
+    <div class="slide active">
+        <img src="../static/img/slide-series8.png" alt="Image 1">
+	</div>
+</div>
+<!-- Products tab & slick -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12 text-center">
+            <div class="row justify-content-center">
+                {% for spare_part in spare_parts %}
+                <div class="col-md-3">
+                    <!-- product -->
+                    <div class="product">
+                        <div class="product-img">
+                            <!-- Set max-width and max-height for the image -->
+                            <img src="{{ spare_part.image.url }}" alt="{{ spare_part.name }}" style="max-width: 70%; max-height: 200px;">
+                            <div class="product-label">
+                                {% if spare_part.sale %}
+                                <span class="sale">-30%</span>
+                                {% endif %}
+                                {% if spare_part.new %}
+                                <span class="new">NEW</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-name"><a href="{% url 'spare_part_details' spare_part.id %}">{{ spare_part.name }}</a></h3>
+                        </div>
+                        <div class="add-to-cart">
+                            <a class="add-to-cart-btn" href="{% url 'spare_part_details' spare_part.id %}">View</a>
+                        </div>
+                    </div>
+                    <!-- /product -->
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Products tab & slick -->
+
+{% endblock content %}

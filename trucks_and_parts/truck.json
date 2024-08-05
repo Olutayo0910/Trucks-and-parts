@@ -1,0 +1,64 @@
+[
+{
+  "model": "core.truck",
+  "pk": 1,
+  "fields": {
+    "image": "project_images/trucks/Howo-8x4-dumptruck.png",
+    "category": "Truck",
+    "type": "dump truck",
+    "name": "Foreign used Howo 8x4 dump truck",
+    "description": "The Sinotruk Howo 8X4 Dump Truck is engineered for heavy-duty tasks with a powerful engine and robust construction. It features various engine options, comfortable cabin configurations, and a durable cargo box, making it ideal for demanding transportation needs.",
+    "details": {
+      "Model": "SINOTRUK HOWO 8x4 Dump Truck",
+      "Engine": "WD615.62 (266HP), WD615.87 (290HP), WD615.69 (336HP), WD615.47 (371HP)",
+      "Cabin": "HW76 with one bed, A/C; HW70 without bed, A/C",
+      "Gearbox": "HW19710 + HW50",
+      "Driving Axle": "HC16, 2x16000kg",
+      "Front Axle": "HF9, 2x9000kg",
+      "Tire": "12.00R20, 12R22.5, 315/80R22.5, 13R22.5, 12+1 pcs",
+      "Cargo Box": "20-30m³, bottom 8mm, side 6mm"
+    },
+    "new": true
+  }
+},
+{
+  "model": "core.truck",
+  "pk": 2,
+  "fields": {
+    "image": "project_images/trucks/new_tractor.png",
+    "category": "Truck",
+    "type": "Tractor Truck",
+    "name": "Brand New Howo 371 hp Tractor Truck",
+    "description": "The Sinotruk HOWO Heavy Duty Truck, model ZZ4257V344JB1, is a powerful 6x4 tractor truck designed to handle heavy payloads ranging from 40 to 50 tons. Equipped with a robust Euro 2 engine and delivering 371 horsepower, this truck is built for efficiency and reliability. It features a spacious HW76 cabin with modern amenities, making it ideal for long hauls in diverse conditions.",
+    "details": {
+      "Model Number": "ZZ4257V344JB1",
+      "Emission Standard": "Euro 2",
+      "Drive Wheel": "6×4",
+      "Seats": "≤5",
+      "Horsepower": "371hp",
+      "Engine Capacity": "＞8L",
+      "Tire Certification": "ECE, GCC, ISO",
+      "Tire Design": "Radial",
+      "Condition": "New",
+      "Wheel Base": "3400mm",
+      "Colour": "White",
+      "Payload": "40-50 Tons",
+      "Wheel": "10",
+      "Dimensions": "6800*2550*3250mm",
+      "Trademark": "Sinotruk",
+      "Origin": "Jinan City, China",
+      "Package Gross Weight": "9500.000kg",
+      "Cabin": "HW76, new face, 1 bed, 2 seats, A/C, USB, radio",
+      "Transmission": "HW19710; 10 front 2 rear; 1900N/M Direct connected",
+      "Front Axle": "VGD 95; 9.5 tons steering axles with drum brake",
+      "Rear Axle": "HC 16 x2; tow 16 tons drive axles with drum brake; I =4.8",
+      "Engine": "WP12.400E201; WP12.430E201 430hp; Euro 2 emission",
+      "Steering": "8118",
+      "Tires": "12.00R20/315.80R22.5; 11 tires including 1 spare",
+      "Fuel Tank": "400L/600L aluminum fuel tank",
+      "Max Speed": "110 km/h"
+    },
+    "new": true
+  }
+}
+]

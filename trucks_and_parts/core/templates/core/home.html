@@ -1,0 +1,174 @@
+{% extends 'core/base.html' %} {% block content %}	
+<!-- Hero section -->
+<div class="slider-container">
+    {% for product in homepage_product %}
+        <div class="slide {% if forloop.first %}active{% endif %}">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        </div>
+    {% endfor %}
+    <button id="prevBtn"><i class="fa-solid fa-arrow-left"></i></button>
+    <button id="nextBtn"><i class="fa-solid fa-arrow-right"></i></button>
+    <div id="slideIndicator"></div>
+</div>
+
+		<!-- NEW ARRIVALS SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+
+					<!-- section title -->
+					<div class="col-md-12">
+						<div class="section-title">
+							<h3 class="title">New Arrivals</h3>
+							<div class="section-nav">
+								<ul class="section-tab-nav tab-nav">
+									<li class="active"><a data-toggle="tab" href="#tab1">Dump truck</a></li>
+									<li><a data-toggle="tab" href="#tab1">Tractor truck</a></li>
+									<li><a data-toggle="tab" href="#tab1">Trailer back</a></li>
+									<li><a data-toggle="tab" href="#tab1">Concrete Mixer</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- /section title -->
+
+					<!-- Products tab & slick -->
+					<div class="col-md-12">
+						<div class="row">
+							<div class="products-tabs">
+								<!-- tab -->
+								<div id="tab1" class="tab-pane active">
+									<div class="products-slick" data-nav="#slick-nav-1">
+										{% for product in new_products %}
+										<!-- product -->
+										<div class="product">
+											<div class="product-img small-screen home-product-img">
+												<img src="{{ product.image.url }}" alt="{{ product.name }}" style="max-width: 100%; max-height: 200px;">
+												<div class="product-label">
+													{% if product.sale %}
+													<span class="sale">-30%</span>
+													{% endif %}
+													{% if product.new %}
+													<span class="new">NEW</span>
+													{% endif %}
+												</div>
+											</div>
+											<div class="product-body">
+												<p class="product-category">{{ product.category }}</p>
+												<!-- Modify the anchor tag to point to the product details route -->
+												<h3 class="product-name"><a href="#">{{ product.name }}</a></h3>
+											</div>
+											<div class="add-to-cart">
+												<a class="add-to-cart-btn" href="#">View</a>
+											</div>
+										</div>
+										<!-- /product -->
+										{% endfor %}
+									</div>
+									<div id="slick-nav-1" class="products-slick-nav"></div>
+								</div>
+								<!-- /tab -->
+							</div>
+						</div>
+					</div>
+					<!-- Products tab & slick -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+<!-- Featured and Servicing Parts Section -->
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <!-- Servicing Parts Section -->
+            <div class="col-md-3">
+                <div class="section-title">
+                    <h4 class="title">Servicing Parts</h4>
+                    <div class="section-nav">
+                        <div id="slick-nav-3" class="products-slick-nav"></div>
+                    </div>
+                </div>
+
+                <!-- Servicing Products Widgets -->
+                <div class="products-widget-slick" data-nav="#slick-nav-3">
+                    {% for part in servicing_parts %}
+                        <div>
+                            <div class="product-widget">
+                                <div class="product-img">
+                                    <img src="{{ part.image.url }}" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <p class="product-category">{{ part.category }}</p>
+                                    <h3 class="product-name"><a href="#">{{ part.name }}</a></h3>
+                                    {% if part.price %}
+                                    <h4 class="product-price">${{ part.price }} <del class="product-old-price">${{ part.old_price }}</del></h4>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <!-- End Servicing Parts Section -->
+
+            <!-- Featured Products Section -->
+            <div class="col-md-9">
+                <div class="section-title">
+                    <h3 class="title">FEATURED PRODUCTS</h3>
+                </div>
+
+                <!-- Featured Products -->
+                <div class="row row-small">
+                    <!-- Loop through featured products -->
+                    {% for product in featured_products %}
+                        <div class="col-md-6 col-lg-3 col-sm-6"> <!-- Adjust column size for small screens -->
+                            <!-- Product -->
+                            <div class="product">
+                                <!-- Product Image -->
+                                <div class="product-img">
+                                    <img src="{{ product.image.url }}" alt="{{ product.name }}" style="max-width: 100%; max-height: 200px;">
+                                    <!-- Product Labels -->
+                                    <div class="product-label">
+                                        {% if product.sale %}
+                                            <span class="sale">-30%</span>
+                                        {% endif %}
+                                        {% if product.new %}
+                                            <span class="new">NEW</span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <!-- Product Body -->
+                                <div class="product-body">
+                                    <!-- Product Category -->
+                                    <p class="product-category">{{ product.category }}</p>
+                                    <!-- Product Name -->
+                                    <h3 class="product-name">
+                                            <a href="#">{{ product.name }}</a>
+                                    </h3>
+                                </div>
+                                <!-- Add to Cart Button -->
+                                <div class="add-to-cart">
+                                    <a class="add-to-cart-btn" href="#">View</a>
+                                </div>
+                                
+                                
+                            </div>
+                            <!-- /Product -->
+                        </div>
+                    {% endfor %}
+                    <!-- /Loop -->
+                </div>
+                <!-- /Featured Products Row -->
+
+            <!-- End Featured Products Section -->
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

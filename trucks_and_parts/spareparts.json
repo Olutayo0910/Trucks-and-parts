@@ -1,0 +1,144 @@
+[
+{
+  "model": "core.sparepart",
+  "pk": 1,
+  "fields": {
+    "image": "project_images/spare_parts/VG1047010038.jpg",
+    "name": "Howo Front Oil Seal-VG1047010038",
+    "description": "The Howo Front Oil Seal (Part No.: VG1047010038) is a high-quality component designed specifically for Sinotruk Howo engines. Engineered to provide reliable sealing performance, this oil seal is essential for maintaining the integrity of the engine's lubrication system by preventing oil leaks. It ensures the longevity and efficiency of the engine by keeping contaminants out and oil in, even under demanding conditions.",
+    "details": null,
+    "category": "Spare parts",
+    "type": "Parts",
+    "price": null,
+    "old_price": null,
+    "new": false
+  }
+},
+{
+  "model": "core.sparepart",
+  "pk": 2,
+  "fields": {
+    "image": "project_images/spare_parts/VG1047010050.jpg",
+    "name": "Howo Rear Oil Seal-VG1047010050",
+    "description": "The Howo Rear Oil Seal (Part No.: VG1047010050) is a vital component designed for Sinotruk Howo engines, ensuring optimal engine performance by preventing oil leaks at the rear end of the engine. This oil seal is crafted from durable materials to withstand the rigors of engine operation, providing long-lasting protection against oil contamination and loss.",
+    "details": null,
+    "category": "Spare parts",
+    "type": "Parts",
+    "price": null,
+    "old_price": null,
+    "new": false
+  }
+},
+{
+  "model": "core.sparepart",
+  "pk": 3,
+  "fields": {
+    "image": "project_images/spare_parts/VG1246090002-howo-truck-trailer-engine-spare-parts.jpg",
+    "name": "Howo Start Motor-VG1246090002",
+    "description": "The Howo Start Motor (Part No.: VG1246090002) is a robust and reliable component specifically designed for Sinotruk Howo engines. This starter motor plays a crucial role in initiating the engine's operation, ensuring a smooth and efficient start every time. Built to meet high standards of quality and durability, this start motor is essential for the optimal performance of Howo vehicles.",
+    "details": "component designed for Sinotruk heavy trucks. It is packed securely in wooden cases and trays to ensure safe transport. This essential part is available for immediate shipment, with delivery typically occurring within three to seven days.",
+    "category": "Spare parts",
+    "type": "Parts",
+    "price": null,
+    "old_price": null,
+    "new": false
+  }
+},
+{
+  "model": "core.sparepart",
+  "pk": 4,
+  "fields": {
+    "image": "project_images/spare_parts/balloon-shock_PHxcz1B.png",
+    "name": "Howo Balloon shock absorber",
+    "description": "The Balloon Shock Absorber Wg1642440086 is a high-quality component designed for Sinotruk Howo trucks. It ensures optimal driving comfort by effectively absorbing shocks and vibrations, extending the lifespan of your vehicle's suspension system. Ideal for heavy-duty applications, this shock absorber is engineered for reliability and durability under challenging conditions.",
+    "details": "specifically designed for Sinotruk Howo trucks. It features a standard size, ensuring a perfect fit, and is packed securely in wooden cases for safe delivery",
+    "category": "Spare parts",
+    "type": "Cabin Parts",
+    "price": null,
+    "old_price": null,
+    "new": true
+  }
+},
+{
+  "model": "core.sparepart",
+  "pk": 5,
+  "fields": {
+    "image": "project_images/spare_parts/VG1540080311.jpg",
+    "name": "Howo Fuel Water  Seperator",
+    "description": "The Howo Fuel Water Separator VG1540080311 is designed to efficiently separate water from fuel, ensuring optimal engine performance and longevity. It is a critical component for maintaining the purity of fuel in Howo trucks, enhancing engine reliability, and reducing the risk of damage from water contamination.",
+    "details": "The Howo Fuel Water Separator VG1540080311 effectively removes water from fuel, ensuring optimal engine performance and reliability for Howo trucks. It’s packed securely and ships within 3-7 days.",
+    "category": "Spare parts",
+    "type": "Servicing Parts",
+    "price": null,
+    "old_price": null,
+    "new": false
+  }
+},
+{
+  "model": "core.sparepart",
+  "pk": 6,
+  "fields": {
+    "image": "project_images/spare_parts/VG1246090017-alternator-generator.png",
+    "name": "Howo generator",
+    "description": "The Howo generator, Part No. VG1246090017, is a high-quality component designed for Sinotruk Howo engines. This generator ensures reliable power generation, making it essential for maintaining optimal engine performance. Manufactured with durability in mind, it meets stringent quality standards, ensuring long-lasting functionality.",
+    "details": "This Howo generator, specifically designed for Sinotruk Howo engines, is packaged according to customer requirements to ensure safe delivery. Suitable for a wide range of Howo engine models, it guarantees consistent performance.",
+    "category": "Spare parts",
+    "type": "Electric parts",
+    "price": null,
+    "old_price": null,
+    "new": true
+  }
+},
+{
+  "model": "core.sparepart",
+  "pk": 7,
+  "fields": {
+    "image": "project_images/spare_parts/VG1500060051Water-Pump-Assembly.png",
+    "name": "Water Pump Assembly VG1500060051",
+    "description": "The Water Pump Assembly, part number VG1500060051, is designed for SINOTRUK vehicles, including HOWO, A7, T7H, T5G, and STEYR models. It offers reliable performance, ensuring effective cooling for your engine. Made with high-quality steel, this assembly meets Euro2 emission standards, making it a durable and efficient choice for your heavy-duty truck.",
+    "details": "The Water Pump Assembly is built to standard size and weighs 13kg. It is packed securely in a carton for safe delivery. Suitable for various SINOTRUK models, this part meets Euro2 emission standards, providing a balance of quality and affordability.",
+    "category": "Spare parts",
+    "type": "Engine parts",
+    "price": null,
+    "old_price": null,
+    "new": false
+  }
+},
+{
+  "model": "core.sparepart",
+  "pk": 8,
+  "fields": {
+    "image": "project_images/spare_parts/VG1560037011.jpg",
+    "name": "Howo Piston VG1560037011",
+    "description": "The Sinotruk Howo Piston VG1560037011 is a high-quality replacement part designed for Howo trucks. Manufactured with precision, it ensures optimal engine performance and durability. This piston is an essential component for maintaining the efficiency and longevity of your vehicle's engine. It is suitable for various models, offering a reliable solution for your truck maintenance needs.",
+    "details": {
+      "description": "The Howo piston, part number VG1560037011, has a weight of 2.1kg, making it a robust and durable component.",
+      "details": {
+        "dimensions": "41x28x15 mm",
+        "weight": "2.1kg",
+        "packaging": "6 pieces per set"
+      }
+    },
+    "category": "Spare parts",
+    "type": "Engine parts",
+    "price": null,
+    "old_price": null,
+    "new": false
+  }
+},
+{
+  "model": "core.sparepart",
+  "pk": 9,
+  "fields": {
+    "image": "project_images/spare_parts/VG1560080012-fuel_filter.jpg",
+    "name": "HOWO Fuel Filter Assembly VG1560080012",
+    "description": "The SINOTRUK HOWO Fuel Filter Assembly (Part No. VG1560080012) is an OEM replacement part designed for diesel engines. Suitable for heavy-duty trucks, it ensures efficient fuel filtration to protect the engine. This high-quality filter is readily available and can be delivered within 3-7 working days. Packaged securely to maintain product integrity.",
+    "details": "\"Product Name\": \"Fuel Filter\", \"Brand\": \"SINOTRUK\", \"Type\": \"HOWO\", \"Part No.\": \"VG1560080012\", \"Application\": \"Truck\", \"Size\": \"Standard\", \"Version\": \"HOWO(08/09/10) New version\", \"Packing\": \"Packed in Carton\"",
+    "category": "Spare parts",
+    "type": "Servicing Parts",
+    "price": null,
+    "old_price": null,
+    "new": false
+  }
+}
+]

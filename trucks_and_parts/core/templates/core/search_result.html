@@ -1,0 +1,35 @@
+<!-- search_result.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h2>Search Results for "{{ query }}"</h2>
+    <div class="row">
+        {% for result in results %}
+        <div class="col-md-4">
+            <div class="product">
+                <div class="product-img">
+                    <img src="{{ result.image }}" alt="{{ result.name }}">
+                </div>
+                <div class="product-body">
+                    <h3 class="product-name">{{ result.name }}</h3>
+                    <p>{{ result.description }}</p>
+                    {% if result.category %}
+                    <p>Category: {{ result.category }}</p>
+                    {% endif %}
+                    <div class="product-btns">
+                        {% if 'truck' in result.__tablename__ %}
+                        <a href="{{ url_for('truck_details', truck_id=result.id) }}" class="btn">View Details</a>
+                        {% elif 'spare_part' in result.__tablename__ %}
+                        <a href="{{ url_for('spare_part_details', spare_part_id=result.id) }}" class="btn">View Details</a>
+                        {% elif 'equipment' in result.__tablename__ %}
+                        <a href="{{ url_for('equipment_details', equipment_id=result.id) }}" class="btn">View Details</a>
+                        {% elif 'product' in result.__tablename__ %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

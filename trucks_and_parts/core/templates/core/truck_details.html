@@ -1,0 +1,156 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- SECTION -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!-- Product main img -->
+            <div class="col-md-5">
+                <div id="product-main-img">
+                    <div class="product-preview">
+                        <img src="{{ truck.image.url }}" alt="{{ truck.name }}">
+                    </div>
+                </div>
+            </div>
+            <!-- /Product main img -->
+
+            <!-- Product details -->
+            <div class="col-md-7">
+                <div class="product-details">
+                    <h2 class="product-name">{{ truck.name }}</h2>
+                    <div>
+                        <div class="product-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <a class="review-link" href="#">10 Review(s) | Add Your Review</a>
+                    </div>
+                    <div>
+                        <span class="product-available">In Stock</span>
+                    </div>
+                    <p>{{ truck.description }}</p>
+
+                    <div class="add-to-cart">
+                        <div class="qty-label">
+                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Request for quote</button>
+                        </div>
+                    </div>
+
+                    <ul class="product-links">
+                        <li>Category:</li>
+                        <li><a href="#">{{ truck.category }}</a></li>
+                    </ul>
+
+                    <ul class="product-links">
+                        <li>Share:</li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /Product details -->
+        </div>
+        <!-- /row -->
+
+        <!-- Product tab -->
+        <div class="col-md-12">
+            <div id="product-tab">
+                <!-- product tab nav -->
+                <ul class="tab-nav">
+                    <li><a data-toggle="tab" href="#tab1">Description</a></li>
+                    <li class="active"><a data-toggle="tab" href="#tab2">Details</a></li>
+                </ul>
+                <!-- /product tab nav -->
+
+                <!-- product tab content -->
+                <div class="tab-content">
+                    <!-- tab2 -->
+                    <div id="tab2" class="tab-pane fade in active">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        {% for key, value in truck.details.items %}
+                                        <tr>
+                                            <th>{{ key }}</th>
+                                            <td>{{ value }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /tab2 -->
+                    <!-- tab1 -->
+                    <div id="tab1" class="tab-pane fade in">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>{{ truck.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /tab1 -->
+                </div>
+                <!-- /product tab content -->
+            </div>
+        </div>
+        <!-- /product tab -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /SECTION -->
+
+<!-- Section -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title text-center">
+                    <h3 class="title">Related Products</h3>
+                </div>
+            </div>
+            {% for product in related_products %}
+            <!-- product -->
+            <div class="col-md-3 col-xs-6">
+                <div class="product">
+                    <div class="related-product-img">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-category">{{ product.category }}</p>
+                        <h3 class="product-name"><a href="#">{{ product.name }}</a></h3>
+                        <div class="product-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                    </div>
+                    <div class="add-to-cart">
+                        <button class="add-to-cart-btn"><a class="add-to-cart-btn" href="{% url 'truck_details' product.id %}">View</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- /product -->
+            {% endfor %}
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /Section -->
+{% endblock content %}

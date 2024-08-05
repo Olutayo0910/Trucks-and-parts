@@ -1,0 +1,51 @@
+{% extends 'base3.html' %}
+{% block content %}
+
+<!-- Page Header-->
+
+<header class="masthead d-flex justify-content-center align-items-center" style="background-image: url('../static/img/blog-hero.jpg'); height: 50vh;">
+    <div class="text-center">
+        <div class="site-heading">
+            <h1>Tay & Becca Blog</h1>
+            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+        </div>
+    </div>
+</header>
+
+
+<!-- Main Content-->
+<div class="container-fluid blog-container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                {% for blog in blogs %}
+                <!-- Post preview-->
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">{{ blog.title }}</h2>
+                        <h3 class="post-subtitle">{{ blog.subtitle }}</h3>
+                    </a>
+                    <!-- Display the first 120 words of the content -->
+                    <p class="post-content">{{ blog.content[:120] }}{% if blog.content|length > 120 %}... <a href="{{ url_for('blog_details', blog_id=blog.id) }}">Read More</a>{% endif %}</p>
+                    <p class="post-meta">
+                        Posted by
+                        <a href="#!">{{ blog.author }}</a>
+                        on {{ blog.date_posted.strftime('%Y-%m-%d') }}
+                    </p>
+                </div>
+                <!-- Divider-->
+                <hr class="my-4" />
+                {% endfor %}
+                <!-- Pager-->
+                <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Main Content-->
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+</div>
+{% endblock content %}

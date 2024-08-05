@@ -1,0 +1,66 @@
+<!-- Extend the base template -->
+{% extends 'base3.html' %}
+
+{% block content %}
+
+<!-- Page Header -->
+<header class="masthead d-flex justify-content-center align-items-center" style="background-image: url('../static/img/blog-hero.jpg'); height: 50vh;">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center header-content">
+            <div class="col-md-10 col-lg-12 col-xl-12">
+                <div class="blog-heading">
+                    <h1>{{ blog.title }}</h1>
+                    <h2 class="blog-subheading">{{ blog.subtitle }}</h2>
+                    <span class="meta">
+                        Posted by
+                        <a href="#!">{{ blog.author }}</a>
+                        on {{ blog.date_posted.strftime('%B %d, %Y') }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article class="container-fluid blog-container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                {% if blog.image %}
+                <img src="{{ blog.image }}" class="img-fluid" alt="Blog Image">
+                {% endif %}
+                {% for paragraph in blog.content.split('\n') %}
+                <p>{{ paragraph }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<!-- Related Posts -->
+<section class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Related Posts</h2>
+            <div class="row">
+                {% for post in related_post %}
+                <div class="col-md-4">
+                    <div class="blog-post-box">
+                        <img src="{{ post.image }}" alt="Blog Post Image" class="blog-post-image">
+                        <div class="blog-post-content">
+                            <h4>{{ post.title }}</h4>
+                            <p>{{ post.content[:120] }}...</p> <!-- Display only the first 120 characters -->
+                            <a href="/blog/{{ post.id }}" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Related Posts -->
+
+{% endblock content %}

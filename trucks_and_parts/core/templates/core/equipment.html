@@ -1,0 +1,43 @@
+{% extends 'base.html' %} 
+{% block content %}
+<div class="slider-container">
+    <div class="slide active">
+        <img src="../static/img/slide-series8.png" alt="Image 1">
+	</div>
+</div>
+<!-- Products tab & slick -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12 text-center">
+            <div class="row justify-content-center">
+                {% for equipment in equipments %}
+                <div class="col-md-3">
+                    <!-- product -->
+                    <div class="product">
+                        <div class="product-img">
+                            <img src="{{ equipment.image }}" alt="{{ equipment.name }}">
+                            <div class="product-label">
+                                {% if equipment.sale %}
+                                <span class="sale">-30%</span>
+                                {% endif %}
+                                {% if equipment.new %}
+                                <span class="new">NEW</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-name"><a href="{{ url_for('equipment_details', equipment_id=equipment.id) }}">{{ equipment.name }}</a></h3>
+                        </div>
+                        <div class="add-to-cart">
+                            <a class="add-to-cart-btn" href="{{ url_for('equipment_details', equipment_id=equipment.id) }}">View</a>
+                        </div>
+                    </div>
+                    <!-- /product -->
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Products tab & slick -->
+{% endblock content %}
