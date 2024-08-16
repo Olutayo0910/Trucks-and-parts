@@ -1,4 +1,6 @@
-{% extends 'base3.html' %}
+
+{% extends 'core/base3.html' %}
+{% load static %}
 {% block content %}
 
 <!-- Page Header-->
@@ -15,23 +17,26 @@
 
 <!-- Main Content-->
 <div class="container-fluid blog-container d-flex justify-content-center align-items-center min-vh-100">
-    <div class="container px-4 px-lg-5">
+    <div class="container">
         <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="col-md-12 col-lg-12 col-xl-12">
                 {% for blog in blogs %}
                 <!-- Post preview-->
                 <div class="post-preview">
-                    <a href="post.html">
+                    <a href="{% url 'blog_details' blog.id %}">
                         <h2 class="post-title">{{ blog.title }}</h2>
                         <h3 class="post-subtitle">{{ blog.subtitle }}</h3>
                     </a>
                     <!-- Display the first 120 words of the content -->
-                    <p class="post-content">{{ blog.content[:120] }}{% if blog.content|length > 120 %}... <a href="{{ url_for('blog_details', blog_id=blog.id) }}">Read More</a>{% endif %}</p>
+                    <p class="post-content">
+                        {{ blog.content|truncatewords:20 }}{% if blog.content|length > 120 %}... <a href="{{ blog.get_absolute_url }}">Read More</a>{% endif %}
+                    </p>                    
                     <p class="post-meta">
                         Posted by
                         <a href="#!">{{ blog.author }}</a>
-                        on {{ blog.date_posted.strftime('%Y-%m-%d') }}
+                        on {{ blog.date_posted|date:"%B %d, %Y" }}
                     </p>
+                    
                 </div>
                 <!-- Divider-->
                 <hr class="my-4" />

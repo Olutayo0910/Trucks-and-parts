@@ -1,20 +1,19 @@
-<!-- Extend the base template -->
-{% extends 'base3.html' %}
+{% extends 'core/base3.html' %}
+{% load static %}
 
 {% block content %}
 
-<!-- Page Header -->
-<header class="masthead d-flex justify-content-center align-items-center" style="background-image: url('../static/img/blog-hero.jpg'); height: 50vh;">
+<!-- Blog Header -->
+<header class="masthead d-flex justify-content-center align-items-center" style="background-image: url('{% static 'img/blog-hero.jpg' %}'); height: 50vh;">
     <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center header-content">
             <div class="col-md-10 col-lg-12 col-xl-12">
-                <div class="blog-heading">
+                <div class="blog-heading text-center text-white">
                     <h1>{{ blog.title }}</h1>
-                    <h2 class="blog-subheading">{{ blog.subtitle }}</h2>
                     <span class="meta">
                         Posted by
                         <a href="#!">{{ blog.author }}</a>
-                        on {{ blog.date_posted.strftime('%B %d, %Y') }}
+                        on {{ blog.date_posted|date:"%B %d, %Y" }}
                     </span>
                 </div>
             </div>
@@ -22,45 +21,47 @@
     </div>
 </header>
 
-<!-- Post Content -->
-<article class="container-fluid blog-container d-flex justify-content-center align-items-center min-vh-100">
-    <div class="container px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-                {% if blog.image %}
-                <img src="{{ blog.image }}" class="img-fluid" alt="Blog Image">
-                {% endif %}
-                {% for paragraph in blog.content.split('\n') %}
-                <p>{{ paragraph }}</p>
-                {% endfor %}
+<!-- Blog Post Content -->
+<article class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-12 col-lg-2 col-xl-12">
+            {% if blog.image %}
+            <img src="{{ blog.image.url }}" class="img-fluid mb-4" alt="Image related to {{ blog.title }}">
+            {% endif %}
+            <div class="blog-content">
+                {{ blog.content|safe }}
             </div>
         </div>
     </div>
 </article>
 
-
-<!-- Related Posts -->
-<section class="container">
+<!-- Recent Posts -->
+<section class="container mt-5 px-4 px-lg-5">
     <div class="row">
         <div class="col-md-12">
-            <h2>Related Posts</h2>
+            <h2>Recent Posts</h2>
             <div class="row">
-                {% for post in related_post %}
-                <div class="col-md-4">
-                    <div class="blog-post-box">
-                        <img src="{{ post.image }}" alt="Blog Post Image" class="blog-post-image">
-                        <div class="blog-post-content">
-                            <h4>{{ post.title }}</h4>
-                            <p>{{ post.content[:120] }}...</p> <!-- Display only the first 120 characters -->
-                            <a href="/blog/{{ post.id }}" class="btn btn-primary">Read More</a>
+                {% for post in recent_blogs %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        {% if post.image %}
+                        <img src="{{ post.image.url }}" class="card-img-top" alt="Image related to {{ post.title }}" style="width: 100px; height: 80px;">
+
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ post.title }}</h5>
+                            <p class="card-text">{{ post.content|slice:":120" }}...</p>
+                            <a href="{% url 'blog_details' post.id %}" class="btn btn-primary">Read More</a>
                         </div>
                     </div>
                 </div>
+                {% empty %}
+                <p>No recent posts available.</p>
                 {% endfor %}
             </div>
         </div>
     </div>
 </section>
-<!-- End Related Posts -->
+<!-- End Recent Posts -->
 
 {% endblock content %}

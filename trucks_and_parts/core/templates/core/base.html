@@ -71,14 +71,14 @@
                     <div class="logos">
                         <div class="col-md-2">
                             <div class="header-logo">
-                                <a href="#" class="logo">
+                                <a href="{% url 'index' %}" class="logo">
                                     <img src="{% static 'img/howo-logo1.png' %}" alt="">
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="header-logo">
-                                <a href="#" class="logo">
+                                <a href="{% url 'index' %}" class="logo">
                                     <img src="{% static 'img/tabs-logo1.png' %}" alt="">
                                 </a>
                             </div>
@@ -89,7 +89,8 @@
                     <!-- SEARCH BAR -->
                     <div class="col-md-7 col-sm-12 text-center">
                         <div class="header-search">
-                            <form action="/search" method="POST">
+                            <form action="#" method="POST">
+                                {% csrf_token %}
                                 <input name="query" class="input" placeholder="Search here">
                                 <button type="submit" class="search-btn">Search</button>
                             </form>
@@ -127,12 +128,12 @@
             <div id="responsive-nav">
                 <!-- NAV -->
                 <ul class="main-nav nav navbar-nav">
-                    <li class="active"><a href="#">HOME</a></li>
+                    <li class="active"><a href="{% url 'index' %}">HOME</a></li>
                     <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">TRUCK</a></li>
-                    <li><a href="#">EQUIPMENT</a></li>
-                    <li><a href="#">SPARE PARTS</a></li>
-                    <li><a href="#">BLOG</a></li>
+                    <li><a href="{% url 'truck' %}">TRUCK</a></li>
+                    <li><a href="{% url 'equipment' %}">EQUIPMENT</a></li>
+                    <li><a href="{% url 'spare_parts' %}">SPARE PARTS</a></li>
+                    <li><a href="{% url 'blog_list' %}">BLOG</a></li>
                 </ul>
                 <!-- /NAV -->
             </div>
@@ -145,177 +146,157 @@
     {% block content %}{% endblock %}
 
     <!-- NEWSLETTER -->
-		<div id="newsletter" class="section">
-			<!-- Blog Section -->
-			<div class="section">
-				<div class="container">
-					<div class="section-title">
-						<h3 class="title">Latest Blog Posts</h3>
-					</div>
-					<div class="row">
-						<div class="col-md-4">
-							<div class="blog-post-box">
-								<img src="../static/img/piston.png" alt="Blog Post Image" class="blog-post-image">
-								<div class="blog-post-content">
-									<h4>Blog Post Title 1</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-									<a href="/blog/post-1" class="btn btn-primary">Read More</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="blog-post-box">
-								<img src="../static/img/new_tractor.png" alt="Blog Post Image" class="blog-post-image">
-								<div class="blog-post-content">
-									<h4>Blog Post Title 2</h4>
-									<p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-									<a href="/blog/post-2" class="btn btn-primary">Read More</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="blog-post-box">
-								<img src="../static/img/engine.png" alt="Blog Post Image" class="blog-post-image">
-								<div class="blog-post-content">
-									<h4>Blog Post Title 3</h4>
-									<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-									<a href="/blog/post-3" class="btn btn-primary">Read More</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End Blog Section -->
-			
-			
-						<!-- container -->
-						<div class="container">
-							<!-- row -->
-							<div class="row">
-								<div class="col-md-12">
-									<div class="newsletter">
-										<p>Sign Up for the <strong>NEWSLETTER</strong></p>
-										<form>
-											<input class="input" type="email" placeholder="Enter Your Email">
-											<button class="newsletter-btn">Subscribe</button>
-										</form>
-										<ul class="newsletter-follow">
-											<li>
-												<a href="#"><i class="fa fa-facebook"></i></a>
-											</li>
-											<li>
-												<a href="#"><i class="fa fa-twitter"></i></a>
-											</li>
-											<li>
-												<a href="#"><i class="fa fa-instagram"></i></a>
-											</li>
-											<li>
-												<a href="#"><i class="fa fa-pinterest"></i></a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<!-- /row -->
-						</div>
-						<!-- /container -->
-					</div>
-					<!-- /NEWSLETTER -->
-			
-					<!-- FOOTER -->
-					<footer id="footer">
-						<!-- top footer -->
-						<div class="section">
-							<!-- container -->
-							<div class="container">
-								<!-- row -->
-								<div class="row">
-									<div class="col-md-3 col-xs-6">
-										<div class="footer">
-											<h3 class="footer-title">About Us</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
-											<ul class="footer-links">
-												<li><a href="#"><i class="fa fa-map-marker"></i>7, Femi Odutayo Street,</br>Agiliti, Lagos</a></li>
-												<li><a href="#"><i class="fa fa-phone"></i>+234-808-931-6691</a></li>
-												<li><a href="#"><i class="fa fa-envelope-o"></i>tayandbeccaservices@gmail.com</a></li>
-											</ul>
-										</div>
-									</div>
-			
-									<div class="col-md-3 col-xs-6">
-										<div class="footer">
-											<h3 class="footer-title">Categories</h3>
-											<ul class="footer-links">
-												<li><a href="#">Trucks</a></li>
-												<li><a href="#">Spare parts</a></li>
-												<li><a href="#">Equipment</a></li>
-												<li><a href="#">Blog</a></li>
-											</ul>
-										</div>
-									</div>
-			
-									<div class="clearfix visible-xs"></div>
-			
-									<div class="col-md-3 col-xs-6">
-										<div class="footer">
-											<h3 class="footer-title">Information</h3>
-											<ul class="footer-links">
-												<li><a href="#">About Us</a></li>
-												<li><a href="#">Contact Us</a></li>
-												<li><a href="#">Privacy Policy</a></li>
-												<li><a href="#">Orders and Returns</a></li>
-												<li><a href="#">Terms & Conditions</a></li>
-											</ul>
-										</div>
-									</div>
-			
-									<div class="col-md-3 col-xs-6">
-										<div class="footer">
-											<h3 class="footer-title">Service</h3>
-											<ul class="footer-links">
-												<li><a href="#">My Account</a></li>
-												<li><a href="#">View Cart</a></li>
-												<li><a href="#">Wishlist</a></li>
-												<li><a href="#">Track My Order</a></li>
-												<li><a href="#">Help</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								<!-- /row -->
-							</div>
-							<!-- /container -->
-						</div>
-						<!-- /top footer -->
-			
-						<!-- bottom footer -->
-						<div id="bottom-footer" class="section">
-							<div class="container">
-								<!-- row -->
-								<div class="row">
-									<div class="col-md-12 text-center">
-										<ul class="footer-payments">
-											<li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
-											<li><a href="#"><i class="fa fa-credit-card"></i></a></li>
-											<li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
-											<li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
-											<li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
-											<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
-										</ul>
-										<span class="copyright">
-											<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-											Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-										<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-										</span>
-									</div>
-								</div>
-									<!-- /row -->
-							</div>
-							<!-- /container -->
-						</div>
-						<!-- /bottom footer -->
-					</footer>
+    <div id="newsletter" class="section">
+        <!-- Blog Section -->
+        <div class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h3 class="title">Latest Blog Posts</h3>
+                </div>
+                <div class="row">
+                    {% for blog in recent_blogs %}
+                    <div class="col-md-4">
+                        <div class="blog-post-box">
+                            {% if blog.image %}
+                            <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="blog-post-image">
+                            {% else %}
+                            <img src="{% static 'img/default_blog_image.png' %}" alt="Blog Post Image" class="blog-post-image">
+                            {% endif %}
+                            <div class="blog-post-content">
+                                <h4>{{ blog.title }}</h4>
+                                <p>{{ blog.content|truncatewords:20 }}</p>
+                                <a href="{% url 'blog_details' blog.id %}" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- End Blog Section -->
+
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="newsletter">
+                        <p>Sign Up for the <strong>NEWSLETTER</strong></p>
+                        <form>
+                            <input class="input" type="email" placeholder="Enter Your Email">
+                            <button class="newsletter-btn">Subscribe</button>
+                        </form>
+                        <ul class="newsletter-follow">
+                            <li>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /NEWSLETTER -->
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <!-- top footer -->
+        <div class="section">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">About Us</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+                            <ul class="footer-links">
+                                <li><a href="#"><i class="fa fa-map-marker"></i>7, Femi Odutayo Street,</br>Agiliti, Lagos</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i>+234-808-931-6691</a></li>
+                                <li><a href="#"><i class="fa fa-envelope-o"></i>tayandbeccaservices@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Information</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Return Policy</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Customer Service</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">My Account</a></li>
+                                <li><a href="#">Order Tracking</a></li>
+                                <li><a href="#">Wishlist</a></li>
+                                <li><a href="#">Cart</a></li>
+                                <li><a href="#">Checkout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Service Areas</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Lagos</a></li>
+                                <li><a href="#">Abuja</a></li>
+                                <li><a href="#">Port Harcourt</a></li>
+                                <li><a href="#">Kano</a></li>
+                                <li><a href="#">Ibadan</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /top footer -->
+
+        <!-- bottom footer -->
+        <div id="bottom-footer" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-xs-6">
+                        <div class="footer-copy">
+                            <p>&copy; 2024 Tay & Becca Services. All Rights Reserved.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        <ul class="footer-payments">
+                            <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+                            <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+                            <li><a href="#"><i class="fa fa-paypal"></i></a></li>
+                            <li><a href="#"><i class="fa fa-bitcoin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /bottom footer -->
+    </footer>
+    <!-- /FOOTER -->
 
     <!-- Scripts -->
     <script src="{% static 'js/jquery.min.js' %}"></script>

@@ -1,4 +1,4 @@
-{% extends 'base.html' %} 
+{% extends 'core/base.html' %} 
 {% block content %}
 <div class="slider-container">
     <div class="slide active">
@@ -26,11 +26,14 @@
                             </div>
                         </div>
                         <div class="product-body">
-                            <h3 class="product-name"><a href="{{ url_for('equipment_details', equipment_id=equipment.id) }}">{{ equipment.name }}</a></h3>
+                            <h3 class="product-name">
+                                <a href="{% url 'equipment_details' equipment.id %}">{{ equipment.name }}</a>
+                            </h3>
                         </div>
                         <div class="add-to-cart">
-                            <a class="add-to-cart-btn" href="{{ url_for('equipment_details', equipment_id=equipment.id) }}">View</a>
+                            <a class="add-to-cart-btn" href="{% url 'equipment_details' equipment.id %}">View</a>
                         </div>
+                        
                     </div>
                     <!-- /product -->
                 </div>

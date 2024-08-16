@@ -68,7 +68,7 @@ def convert_charfield_to_json(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0004_auto_20240804_0528'),  # Replace with the name of the last migration before this one
+        ('core', '0003_auto_20240804_0519'),  # Replace with the name of the last migration before this one
     ]
 
     operations = [
